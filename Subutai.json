@@ -20,6 +20,15 @@
             ]
         }
     ],
+	  "peer-criteria": [
+        {
+        "name": "HTTP-GROUP",
+        "max-price": "100",
+        "avg-cpu-load": "50",
+        "min-free-ram": "256",
+        "min-free-disk-space": "20"
+        }
+    ],
   
     "user-variables": {
         "environmentName": {
