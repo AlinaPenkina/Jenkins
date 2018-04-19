@@ -29,25 +29,20 @@
 					"mysql"
 				]
 			},
-			"user-variables": [{
+			"user-variables": {
 					"domain": {
 						"description": "Select your domain or create new one",
 						"type": "domain",
 						"default": "jenkins.envs.subutai.cloud",
 						"validation": "[a-zA-Z0-9.-]+"
 					},
-					"mysqlDBtype": {
+					"Containertype": {
 						"description": "You can set TINY,SMALL,MEDIUM,LARGE,HUGE",
 						"type": "enum",
 						"default": "SMALL",
 						"validation": "TINY,SMALL,MEDIUM,LARGE,HUGE"
 					},
-					"wordpressContainerType": {
-						"description": "You can set TINY,SMALL,MEDIUM,LARGE,HUGE",
-						"type": "enum",
-						"default": "SMALL",
-						"validation": "TINY,SMALL,MEDIUM,LARGE,HUGE"
-					},
+				
 					"maxPeersPrice": {
 						"description": "To search and find the best initial peers for you to select from, enter the maximum GoodWill / hour (GW/h) limit you might be willing to pay while running this application on rented peers? You can still select free peers, your peers, and others based on price before installing the application.",
 						"type": "int",
@@ -61,4 +56,4 @@
 						"validation": "[a-zA-Z0-9]+"
 					}
 				}
-			}
+			
