@@ -8,17 +8,14 @@
             "hostname": "${webContainerName}",
             "template": "jenkins2@jenkins",
             "peer-criteria": "HTTP-GROUP",
-            "size": "${webContainerSize}",
+            "size": "${webContainerSize}" ],
             "port-mapping": [
                 {
                 "protocol": "http",
                 "domain": "${domainName}",
                 "internal-port": "80",
                 "external-port": "8080"
-                },
-                
-            ]
-        }
+                },        
     ],
 	  "peer-criteria":{
         "name": "HTTP-GROUP",
