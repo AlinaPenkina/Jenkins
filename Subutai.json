@@ -1,0 +1,72 @@
+{
+  "name": "${envName}",
+  "description": "Jenkins",
+  "version": "1.0.1",
+  "author": "Alina",
+  "containers": [
+    {
+      "hostname": "jenkins2",
+      "template": "jenkins2@jenkins",
+      "peer-criteria": "HTTP-GROUP",
+      "size": "${Containertype}"
+    },
+    {
+      "port-mapping": [
+        {
+          "protocol": "HTTP",
+          "domain": "${domain}",
+          "internal-port": "80",
+          "external-port": "8080"
+        }
+      ]
+    }
+  ],
+  "peer-criteria": [
+    {
+      "name": "HTTP-GROUP",
+      "max-price": "${maxPeersPrice}"
+    }
+  ],
+    "groups": [
+      {
+        "name": "jenkins",
+        "python-interpreter": "/usr/bin/python3",
+        "hostnames": [
+          "mysql"
+        ],
+      }
+    ]
+  },
+  "user-variables": {
+    "domain": {
+      "description": "Select your domain or create new one",
+      "type": "domain",
+      "default": "jenkins.envs.subutai.cloud",
+      "validation": "[a-zA-Z0-9.-]+"
+    },
+    "mysqlDBtype": {
+      "description": "You can set TINY,SMALL,MEDIUM,LARGE,HUGE",
+      "type": "enum",
+      "default": "SMALL",
+      "validation": "TINY,SMALL,MEDIUM,LARGE,HUGE"
+    },
+    "wordpressContainerType": {
+      "description": "You can set TINY,SMALL,MEDIUM,LARGE,HUGE",
+      "type": "enum",
+      "default": "SMALL",
+      "validation": "TINY,SMALL,MEDIUM,LARGE,HUGE"
+    },
+    "maxPeersPrice": {
+      "description": "To search and find the best initial peers for you to select from, enter the maximum GoodWill / hour (GW/h) limit you might be willing to pay while running this application on rented peers? You can still select free peers, your peers, and others based on price before installing the application.",
+      "type": "int",
+      "default": "50",
+      "validation": "\\d+"
+    },
+    "envName": {
+      "description": "Enter your environment name",
+      "type": "string",
+      "default": "wordpress env",
+      "validation": "[a-zA-Z0-9]+"
+    }
+  }
+}
