@@ -27,7 +27,6 @@
         "min-free-ram": "256",
         "min-free-disk-space": "20"
         }
-    ],
   
     "user-variables": {
         "environmentName": {
