@@ -1,0 +1,4 @@
+- hosts: Jenkins
+  tasks:
+  - name: start Jenkins
+    shell: systemctl start Jenkins.service
