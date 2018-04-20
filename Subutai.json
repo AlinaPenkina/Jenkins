@@ -36,7 +36,7 @@
           },
 	    "maxPeersPrice":{
 	    "description": "Enter max peers price",
-	    "type": "enum",
+	    "type": "num",
 	    "default": "100"
 	    },
           "domainName": {
