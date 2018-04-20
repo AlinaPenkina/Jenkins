@@ -26,7 +26,28 @@
         "max-price": "${maxPeersPrice}"
         }
  ],
-  
+   "ansible-configuration": {
+        "source-url": "https://github.com/AlinaPenkina/Jenkins/archive/master.zip",
+        "ansible-playbook": "ansible-playbook-main.yml",
+        "extra-vars": [
+            {
+                "key": "access_key",
+                "value": "${accessKey}"
+            }, 
+            {
+                "key": "secret_key",
+                "value": "${secretKey}"
+            }
+        ],
+        "groups": [
+            {
+                "name": "Jenkins",
+                "hostnames": [
+                    "Jenkins"
+                ]
+            }
+        ]
+    },
     "user-variables": {
         "environmentName": {
             "description": "Enter the environment name",
