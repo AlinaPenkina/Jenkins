@@ -1,8 +1,5 @@
- hosts: Jenkins
-  remote_user: root
-   "tasks": 
-    - name: Update and upgrade all
-      apt:
-        upgrade: true
-        update_cache: true
-        allow_unauthenticated: true
+---
+- hosts: all
+  tasks:    
+  - name: Copy password
+    template: src="/root/Jenkins/config.txt"   dest="/tmp/config.txt"   mode=777 
