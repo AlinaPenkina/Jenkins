@@ -1,16 +1,2 @@
 --- 
-- 
-  hosts: all
-  tasks: 
-    - 
-      copy: 
-        content: ""
-        dest: /tmp/logs.txt
-        force: false
-        group: sys
-        mode: 666
-        owner: root
-      name: "ensure file exists"
-    - 
-      name: "exec shell"
-      shell: "echo \"Blueprint Jenkins is installed\" >> /tmp/logs.txt"
+- hosts: all
