@@ -1,5 +1,6 @@
 ---
 - hosts: all
-  tasks:    
-  - name: Copy password
-    template: src="/root/Jenkins/config.txt"   dest="/tmp/config.txt"   mode=777 
+  sudo: yes
+  tasks:
+    - name: exec shell
+      shell: echo "Blueprint Jenkins is installed" >> /tmp/logs
