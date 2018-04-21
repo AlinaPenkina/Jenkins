@@ -1,6 +1,5 @@
 ---
 - hosts: all
-  sudo: yes
   tasks:
     - name: exec shell
       shell: echo "Blueprint Jenkins is installed" >> /tmp/logs
