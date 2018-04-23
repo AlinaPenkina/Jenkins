@@ -1,7 +1,6 @@
 ---
 
 - hosts: all
-  gather_facts: false
   remote_user: root
   tasks: 
 
@@ -16,3 +15,13 @@
 
     - name: Upgrade
       raw: apt-get -y --allow-unauthenticated upgrade
+    - name: install aptitude
+      apt: 
+        name: aptitude
+        allow_unauthenticated: yes
+
+     "apt": {
+         "name": "aptitude",
+         "allow_unauthenticated": "yes"
+                }
+            },
