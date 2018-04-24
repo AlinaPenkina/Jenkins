@@ -3,9 +3,5 @@
   tasks:
   - name: stop Jenkins
     shell: systemctl stop Jenkins.service
-
-  - name: Copy dbconfig xml
-    template: src="config.json.j2"   dest="/opt/Jenkins/config/config.json"   mode=777
-   
   - name: restart Jenkins
     shell: systemctl start Jenkins.service
