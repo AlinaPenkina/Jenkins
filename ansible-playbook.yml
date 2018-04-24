@@ -1,6 +1,3 @@
 ---
 - hosts: Jenkins
   become: true
-  tasks:
-  - name: restart Jenkins
-    shell: systemctl start Jenkins.service
