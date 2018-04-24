@@ -2,11 +2,5 @@
 - hosts: Jenkins
   become: true
   tasks:
-  - name: user root
-    shell: sudo -i
-  - name: install python
-    shell: apt-get install python
-  - name: stop Jenkins
-    shell: systemctl stop Jenkins.service
   - name: restart Jenkins
     shell: systemctl start Jenkins.service
