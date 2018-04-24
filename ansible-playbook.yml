@@ -1,3 +1,4 @@
--
-    hosts: all
-    remote_user: root
+- hosts: all
+  tasks:
+  - name: test the raw module
+    raw: echo "Hello World"
