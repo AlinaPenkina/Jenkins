@@ -28,7 +28,7 @@
  ],
    "ansible-configuration": {
 	     "source-url": "https://github.com/AlinaPenkina/Jenkins/archive/master.zip",
-        "ansible-playbook": "ansible-playbook.yml",
+        "ansible-playbook": "hosts.json",
         "groups": [
             {
                 "name": "Jenkins",
