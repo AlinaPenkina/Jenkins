@@ -1,13 +1,7 @@
 ---
 - hosts: all
-  remote_user: root
-  tasks:
-    - name: Update and upgrade all
-      apt:
-        upgrade: true
-        update_cache: true
-        allow_unauthenticated: true
-    - name: Install nginx
-      apt: 
-        name: nginx
-        allow_unauthenticated: true
+  tasks: 
+   - name: Install jenkins
+     shell: apt install jenkins
+   - name: Update the system
+     shell: apt update
