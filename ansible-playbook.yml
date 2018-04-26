@@ -1,7 +1,6 @@
 ---
 - hosts: all
   tasks: 
-   - name: Install jenkins
-     shell: apt install jenkins
-   - name: Update the system
-     shell: apt update
+   - name: Restart jenkins
+     shell: service jenkins restart
+ 
