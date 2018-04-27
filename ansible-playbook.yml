@@ -1,6 +1,6 @@
 ---
 - hosts: all
   tasks: 
-   - name: Restart jenkins
-     shell: service jenkins restart
+   - name: Install jenkins
+     shell: sudo apt-get install jenkins
  
