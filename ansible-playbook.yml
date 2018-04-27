@@ -1,6 +1,6 @@
 ---
 
-- hosts: all
+- hosts: Jenkins
   gather_facts: false
   remote_user: root
   tasks: 
