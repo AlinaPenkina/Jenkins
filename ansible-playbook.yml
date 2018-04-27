@@ -9,4 +9,11 @@
     - name: Upgrade
       raw: apt-get -y --allow-unauthenticated upgrade || true
 
-
+- hosts: Jenkins
+  remote_user: root
+  tasks: 
+    - name: Update Cache
+      apt: 
+        state: present
+        allow_unauthenticated: yes
+        update_cache: yes
