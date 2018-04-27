@@ -1,6 +1,8 @@
 ---
-- hosts: all
+- name: Install hossts
+  hosts: all
+  gather_facts: false
   tasks: 
-   - name: Install jenkins
-     shell: sudo apt-get install jenkins
+   - name: Install python
+     raw: yum -y install python-simplejson
  
