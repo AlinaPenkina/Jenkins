@@ -14,9 +14,8 @@
 - hosts: jenkins
   remote_user: root
   tasks: 
-    - name: Install required debs
+    - name: Update Cache
       apt: 
-        name: "{{ item }}"
         state: present
         allow_unauthenticated: yes
         update_cache: yes
