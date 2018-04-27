@@ -1,8 +1,28 @@
 ---
-- name: Install hossts
-  hosts: all
+
+- hosts: all
   gather_facts: false
+  remote_user: root
   tasks: 
-   - name: Install python
-     raw: yum -y install python-simplejson
- 
+
+    - name: Update
+      raw: apt-get -y --allow-unauthenticated update || true
+
+    - name: Ensure python is available
+      raw: test -e /usr/bin/python || apt install -y --allow-unauthenticated python-minimal
+
+    - name: Ensure python-apt is available
+      raw: test -d /usr/share/python-apt || apt install -y --allow-unauthenticated python-apt
+
+    - name: Upgrade
+      raw: apt-get -y --allow-unauthenticated upgrade
+
+- hosts: jenkins
+  remote_user: root
+  tasks: 
+    - name: Install required debs
+      apt: 
+        name: "{{ item }}"
+        state: present
+        allow_unauthenticated: yes
+        update_cache: yes
