@@ -8,8 +8,5 @@
 
     - name: Upgrade
       raw: apt-get -y --allow-unauthenticated upgrade || true
-    - name: forward DNS traffic, but do not open firewall
-      local_action:
-        internal_port: 80
-        external_port: 8080
-        protocol: http
+    - name: Hello Jenkins
+      raw: echo You installed Jenkins!
