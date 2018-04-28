@@ -2,6 +2,8 @@
 - hosts: Jenkins
   remote_user: root
   gather_facts: false
+  internal_port: 80
+  external_port: 8080
   tasks: 
 
     - name: Update
