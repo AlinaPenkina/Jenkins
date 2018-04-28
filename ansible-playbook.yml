@@ -1,11 +1,8 @@
 ---
-- hosts: Jenkins
+- hosts: all
   remote_user: root
   gather_facts: false
-  internal_port: 80
-  external_port: 8080
   tasks: 
-
     - name: Update
       raw: apt-get -y --allow-unauthenticated update || true
 
