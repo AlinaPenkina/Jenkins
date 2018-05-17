@@ -6,7 +6,7 @@
     "containers": [
         {
             "hostname": "${webContainerName}",
-            "template": "jenkins2@jenkins",
+            "template": "debian-stretch",
             "peer-criteria": "HTTP-GROUP",
             "size": "${webContainerSize}",
 		
