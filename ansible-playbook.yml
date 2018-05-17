@@ -14,3 +14,8 @@
       raw: apt-get -y --allow-unauthenticated upgrade || true
     - name: Install Jenkins
       raw: apt install jenkins
+    - name: Stop Jenkins
+      raw: systemctl stop jenkins.service
+    - name: Start Jenkins
+      raw: systemctl start jenkins.service
+
