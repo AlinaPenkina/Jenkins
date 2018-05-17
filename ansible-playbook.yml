@@ -14,5 +14,3 @@
       raw: apt-get -y --allow-unauthenticated upgrade || true
     - name: Install Jenkins
       raw: apt install jenkins
-    - name: To show the password
-      raw: cat /var/lib/jenkins/secrets/initialAdminPassword
