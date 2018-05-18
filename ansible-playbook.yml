@@ -7,7 +7,7 @@
     - name: Download Jenkins to container
       raw: wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
     - name: Add a repository
-      raw: sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+      raw: echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list
     - name: Update
       raw: sudo apt-get update
     - name: Install Jenkins
