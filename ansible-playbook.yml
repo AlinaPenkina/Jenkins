@@ -9,7 +9,7 @@
     - name: Add a repository
       raw: echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list
     - name: Update
-      raw: sudo apt-get update
+      raw: apt-get update
     - name: Install Jenkins
       raw: apt-get install jenkins
     - name: To show the password
