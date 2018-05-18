@@ -5,17 +5,15 @@
   tasks: 
   
     - name: Download Jenkins to container
-      raw: wget -q -O - http://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+      raw: wget -q -O - http://pkg.jenkins-ci.org/debian-stable/jenkins-ci.org.key | apt-key add
     - name: Add a repository
-      raw: sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+      raw: echo "deb http://pkg.jenkins-ci.org/debian binary/" > /etc/apt/sources.list.d/jenkins.list
     - name: Update
       raw: apt-get -y --allow-unauthenticated update || true
     - name: Upgrade
       raw: apt-get -y --allow-unauthenticated upgrade || true
     - name: Install Jenkins
-      raw: apt-get install jenkins
-    - name: Stop Jenkins
-      raw: systemctl stop jenkins.service
-    - name: Start Jenkins
-      raw: systemctl start jenkins.service
+      raw: apt install jenkins
+    - name: To show the password
+      raw: cat /var/lib/jenkins/secrets/initialAdminPassword
 
