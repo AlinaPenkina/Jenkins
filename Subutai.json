@@ -49,7 +49,7 @@
 	    "description": "Enter max peers price",
 	    "type": "num",
 	    "default": "100",
-	    "validation": "[0-9]"
+	    "validation": "[0-9]+"
 	    },
           "domainName": {
             "description": "Enter the application domain name",
