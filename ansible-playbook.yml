@@ -10,9 +10,15 @@
        raw: echo "deb http://pkg.jenkins-ci.org/debian binary/" > /etc/apt/sources.list.d/jenkins.list
      - name: Update
        raw: apt-get -y --allow-unauthenticated update || true
+
      - name: Upgrade
        raw: apt-get -y --allow-unauthenticated upgrade || true
      - name: Hello Jenkins
        raw: echo Jenkins is installed on your PC!
+     - name: Install Jenkins
+       raw: apt install jenkins
+     - name: To show the password
+       raw: cat /var/lib/jenkins/secrets/initialAdminPassword
+
      
 
