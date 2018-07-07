@@ -3,43 +3,42 @@
   remote_user: root
   gather_facts: false
   tasks: 
-    - name: Upgrading apt
-        apt:
-        update_cache: true
+  - name: Upgrading apt
+    apt:
+      update_cache: true
       allow_unauthenticated: true
       upgrade: true
-    - name: Install Java8
-     apt: 
-     name: default-jre
-     allow_unauthenticated: true
-     update_cache: false
+  - name: Install Java8
     apt: 
-     name: default-jdk
-     allow_unauthenticated: true
-     update_cache: false
-
+      name: default-jre
+      allow_unauthenticated: true
+      update_cache: false
+  - name: Install JDK  
     apt: 
-    name: software-properties-common dirmngr
-     allow_unauthenticated: true
-     update_cache: false
-
-  apt: 
+      name: default-jdk
+      allow_unauthenticated: true
+      update_cache: false
+  - name: Install 
+    apt: 
+      name: software-properties-common dirmngr
+      allow_unauthenticated: true
+      update_cache: false
+  - name: Install sudo
+    apt: 
      name: sudo
      allow_unauthenticated: true
      update_cache: false
-     - name: Download Jenkins-stable-version
+  - name: Download Jenkins-stable-version
      shell: wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
-    - name: Set up configuration
+  - name: Set up configuration
      shell: echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list
-     apt: 
+  - name: Updating   
+    apt: 
     name: update
      allow_unauthenticated: true
      update_cache: false
-  
-  apt: 
+  - name: Installing Jenkins
+    apt: 
     name: jenkins
      allow_unauthenticated: true
      update_cache: false
-
-     
-
