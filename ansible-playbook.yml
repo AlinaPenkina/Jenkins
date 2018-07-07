@@ -25,20 +25,20 @@
       update_cache: false
   - name: Install sudo
     apt: 
-     name: sudo
-     allow_unauthenticated: true
-     update_cache: false
+      name: sudo
+      allow_unauthenticated: true
+      update_cache: false
   - name: Download Jenkins-stable-version
-     shell: wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+    shell: wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
   - name: Set up configuration
-     shell: echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list
+    shell: echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list
   - name: Updating   
     apt: 
-    name: update
-     allow_unauthenticated: true
-     update_cache: false
+      name: update
+      allow_unauthenticated: true
+      update_cache: false
   - name: Installing Jenkins
     apt: 
-    name: jenkins
-     allow_unauthenticated: true
-     update_cache: false
+      name: jenkins
+      allow_unauthenticated: true
+      update_cache: false
