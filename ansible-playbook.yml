@@ -3,20 +3,43 @@
   remote_user: root
   gather_facts: false
   tasks: 
-  
-     - name: Download Jenkins to container
-       raw: wget -q -O - http://pkg.jenkins-ci.org/debian-stable/jenkins-ci.org.key | apt-key add
-     - name: Add a repository
-       raw: echo "deb http://pkg.jenkins-ci.org/debian binary/" > /etc/apt/sources.list.d/jenkins.list
-     - name: Update
-       raw: apt-get -y --allow-unauthenticated update || true
+    - name: Upgrading apt
+        apt:
+        update_cache: true
+      allow_unauthenticated: true
+      upgrade: true
+    - name: Install Java8
+     apt: 
+     name: default-jre
+     allow_unauthenticated: true
+     update_cache: false
+    apt: 
+     name: default-jdk
+     allow_unauthenticated: true
+     update_cache: false
 
-     - name: Upgrade
-       raw: apt-get -y --allow-unauthenticated upgrade || true
-     - name: Hello Jenkins
-       raw: echo Jenkins is installed on your PC!
-     - name: To show the password
-       raw: cat /var/lib/jenkins/secrets/initialAdminPassword
+    apt: 
+    name: software-properties-common dirmngr
+     allow_unauthenticated: true
+     update_cache: false
+
+  apt: 
+     name: sudo
+     allow_unauthenticated: true
+     update_cache: false
+     - name: Download Jenkins-stable-version
+     shell: wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+    - name: Set up configuration
+     shell: echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list
+     apt: 
+    name: update
+     allow_unauthenticated: true
+     update_cache: false
+  
+  apt: 
+    name: jenkins
+     allow_unauthenticated: true
+     update_cache: false
 
      
 
