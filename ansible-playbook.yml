@@ -20,7 +20,7 @@
       update_cache: false
   - name: Install dirngnr
     apt:
-      name: dirngnr
+      name: dirmngr
       allow_unauthenticated: true
       update_cache: false
   - name: Install software common properties
