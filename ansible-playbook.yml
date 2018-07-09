@@ -18,7 +18,12 @@
       name: default-jdk
       allow_unauthenticated: true
       update_cache: false
-  - name: Install 
+  - name: Install dirngnr
+    apt:
+      name: dirngnr
+      allow_unauthenticated: true
+      update_cache: false
+  - name: Install software common properties
     apt: 
       name: software-properties-common dirmngr
       allow_unauthenticated: true
