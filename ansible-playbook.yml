@@ -18,16 +18,6 @@
       name: default-jdk
       allow_unauthenticated: true
       update_cache: false
-  - name: Install dirngnr
-    apt:
-      name: dirmngr
-      allow_unauthenticated: true
-      update_cache: false
-  - name: Install software common properties
-    apt: 
-      name: software-properties-common dirmngr
-      allow_unauthenticated: true
-      update_cache: false
   - name: Install sudo
     apt: 
       name: sudo
